@@ -41,13 +41,18 @@ public class MorseCode {
 		String morseTranslated = " ";
 		for (String word : toTranslate.split("/")) {
 			System.out.println(word);
-
+			for (String letter : word.trim().split(" ")) {
+				System.out.println(letter);
+				morseTranslated += MorseCode.get(letter);
+			}
+			morseTranslated += " ";
 		}
-		return morseTranslated;
+		return morseTranslated.trim();
 	}
 
 	public static void main(String[] args) {
-		System.out.println(translate(".--- .- ...- .- / .. ... / -.-. --- --- .-.. / --- -.-"));
+
+		System.out.println(translate(".-- .- ...- .-//.. ...//-.-. --- --- .-..//--- -.-"));
 		String code = ".-- .- ...- .-//.. ...//-.-. --- --- .-..//--- -.-";
 
 		String toTranslate = ".--- .- ...- .- / .. ... / -.-. --- --- .-.. / --- -.-";
